@@ -1,12 +1,30 @@
-# React + Vite
+**Title: GitHub Repository Analyzer PWA**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**About**: A Progressive Web App (PWA) that provides deep, AI-powered insights into any public GitHub repository. It combines real-time GitHub data with generative AI to give developers a complete picture of project health, technology stack, and collaboration patterns.It has a stats card at the beginning that displays the no. of Stars, Forks, Open issues, License holder and also the links of the repo as well as it owner's username. It provides a dashboard containing a Pie chart that displays the programming languages used in a repo with their respective percentages, it has a Bar chart displaying the total no. of commits per week (last year). Lastly, some AI generated insights that highlights the purpose of the repo, it language contribution and the collaborators info.
 
-Currently, two official plugins are available:
+**Features**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📊 **Core Statistics**: Stars ⭐, forks 🍴, issues 🐛, license 📄 , 🔗 Repo Link, 👤 Owner
+🧩 **Language Composition Chart**: Interactive pie chart of repo languages  
+📈 **Commit Activity Graph**: Weekly commit activity over the last year  
+🤖 **AI-Generated Insights**:
+  - Repository summary  
+  - Language analysis  
+  - Contribution patterns  
+📱 **PWA**: Installable & offline-capable
 
-## Expanding the ESLint configuration
+**Tech Stack**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+ **Frontend**: React (Vite)  
+ **Charts**: Recharts  
+ **AI Insights**: Gemini API (Google Generative AI)  
+ **Deployment**: Vercel  
+ **PWA**: Service Worker + Manifest  
+
+ Live URL: https://git-hub-repository-analyzer-git-main-ankita-giris-projects.vercel.app/
+
+ Screenshots: (little peeks from the pwa)
+ //
+ 
+ 
+ 
