@@ -1,35 +1,24 @@
-const GITHUB_TOKEN = import.meta.env.VITE_GITHUB_TOKEN;
+const token = import.meta.env.VITE_GITHUB_TOKEN;
 
-export async function fetchRepo(owner, repo) {
-  const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`, {
+async function fetchWithAuth(url) {
+  const res = await fetch(url, {
     headers: {
-      Authorization: `Bearer ${GITHUB_TOKEN}`,
-      Accept: "application/vnd.github.v3+json",
+      Authorization: `token ${token}`,
     },
   });
-  if (!res.ok) throw new Error("Failed to fetch repo data");
-  return await res.json();
+  if (!res.ok) throw new Error(`Failed to fetch: ${url}`);
+  return res.json();
+}
+
+export async function fetchRepo(owner, repo) {
+  return fetchWithAuth(`https://api.github.com/repos/${owner}/${repo}`);
 }
 
 export async function fetchLanguages(owner, repo) {
-  const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/languages`, {
-    headers: {
-      Authorization: `Bearer ${GITHUB_TOKEN}`,
-      Accept: "application/vnd.github.v3+json",
-    },
-  });
-  if (!res.ok) throw new Error("Failed to fetch languages");
-  return await res.json();
+  return fetchWithAuth(`https://api.github.com/repos/${owner}/${repo}/languages`);
 }
 
 export async function fetchCommits(owner, repo) {
-  const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/stats/commit_activity`, {
-    headers: {
-      Authorization: `Bearer ${GITHUB_TOKEN}`,
-      Accept: "application/vnd.github.v3+json",
-    },
-  });
-  if (!res.ok) throw new Error("Failed to fetch commits");
-  return await res.json();
+  return fetchWithAuth(`https://api.github.com/repos/${owner}/${repo}/stats/commit_activity`);
 }
 
