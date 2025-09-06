@@ -11,6 +11,7 @@ export default function App() {
   const [data, setData] = useState(null);
   const [languages, setLanguages] = useState(null);
   const [commits, setCommits] = useState(null);
+  const [theme, setTheme] = useState("light");
 
   async function analyze() {
     if (!owner || !repo) {
@@ -39,8 +40,23 @@ export default function App() {
   }
 
   return (
-    <div style={{ width: "100vw", overflowX: "hidden" }}>
-      {/* Header + Inputs (centered) */}
+    <div className={theme} style={{ width: "100vw", overflowX: "hidden" }}>
+      {/* Theme Toggle */}
+      <div style={{ textAlign: "right", padding: "10px 20px" }}>
+        <button
+          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          style={{
+            padding: "6px 12px",
+            borderRadius: "6px",
+            border: "none",
+            cursor: "pointer",
+          }}
+        >
+          Toggle {theme === "light" ? "Dark" : "Light"} Mode
+        </button>
+      </div>
+
+      {/* Header + Inputs */}
       <div style={{ padding: 20, maxWidth: 1200, margin: "0 auto" }}>
         <h1>GitHub Repo Analyzer</h1>
 
@@ -63,14 +79,13 @@ export default function App() {
 
       {data && (
         <>
-          {/* Full-width charts row */}
+          {/* Charts row */}
           <div
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 1fr",
               gap: "20px",
-              maxWidth: "1200px",   // fixed earlier
-              margin: "40px auto",
+              width: "100vw",
               padding: "0 20px",
               boxSizing: "border-box",
             }}
@@ -83,11 +98,11 @@ export default function App() {
             </div>
           </div>
 
-          {/* Insights below charts, centered */}
+          {/* Insights below */}
           <div
             style={{
               maxWidth: "800px",
-              margin: "230px auto", // ⬅️ pushed down ~5cm
+              margin: "80px auto", // pushed down
               padding: "0 20px",
             }}
           >
