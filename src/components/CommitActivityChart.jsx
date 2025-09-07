@@ -2,21 +2,34 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 
 export default function CommitActivityChart({ commits }) {
   if (!commits || commits.length === 0) {
-    return <p>No commit activity data available.</p>;
+    return <p style={{ textAlign: "center", marginTop: 20 }}>No commit activity data available.</p>;
   }
 
   return (
-    <div style={{ width: "100%", height: 500 }}>
-      <h3 style={{ textAlign: "center", marginBottom: 40 }}>Commit Activity</h3>
-      <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={commits}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="week" label={{ value: "Weeks", position: "insideBottom", offset: -5 }} />
-          <YAxis label={{ value: "Commits", angle: -90, position: "insideLeft" }} />
-          <Tooltip />
-          <Bar dataKey="commits" fill="#8884d8" />
-        </BarChart>
-      </ResponsiveContainer>
+    <div
+      style={{
+        border: "1px solid #ddd",
+        borderRadius: 12,
+        padding: 24,
+        boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+        backgroundColor: "#fff",
+        height: 500,
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      <h3 style={{ textAlign: "center", marginBottom: 24 }}>Commit Activity</h3>
+      <div style={{ flex: 1 }}>
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={commits}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="week" />
+            <YAxis />
+            <Tooltip />
+            <Bar dataKey="commits" fill="#8884d8" />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 }

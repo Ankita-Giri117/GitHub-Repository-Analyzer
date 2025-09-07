@@ -19,63 +19,84 @@ export default function AIInsights({ owner, repo, description }) {
     setContrib("");
     setLoading(true);
 
-    // 1. Repository Summary (short)
-    const summaryPrompt = `Summarize the GitHub repo "${owner}/${repo}" in 2–3 concise sentences.
+    try {
+      const summaryPrompt = `Summarize the GitHub repo "${owner}/${repo}" in 2–3 concise sentences.
 Description: ${description || "No description"}.`;
 
-    // 2. Language Analysis (short)
-    const langPrompt = `Explain the main programming languages used in "${owner}/${repo}" in 2 sentences.
-Keep it brief and clear.`;
+      const langPrompt = `Explain the main programming languages used in "${owner}/${repo}" in 2 sentences. Keep it brief and clear.`;
 
-    // 3. Contribution Patterns (short)
-    const contribPrompt = `Describe the contribution style of "${owner}/${repo}" in 2–3 sentences.
-Focus on collaboration health (solo vs. team).`;
+      const contribPrompt = `Describe the contribution style of "${owner}/${repo}" in 2–3 sentences. Focus on collaboration health (solo vs. team).`;
 
-    const [summaryText, langText, contribText] = await Promise.all([
-      askGemini(summaryPrompt),
-      askGemini(langPrompt),
-      askGemini(contribPrompt),
-    ]);
+      const [summaryText, langText, contribText] = await Promise.all([
+        askGemini(summaryPrompt),
+        askGemini(langPrompt),
+        askGemini(contribPrompt),
+      ]);
 
-    setSummary(summaryText);
-    setLanguages(langText);
-    setContrib(contribText);
-    setLoading(false);
+      setSummary(summaryText);
+      setLanguages(langText);
+      setContrib(contribText);
+    } catch (err) {
+      setError("❌ Failed to fetch AI insights. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
-    <div style={{ border: "1px solid #ddd", borderRadius: 8, padding: 16 }}>
-      <h2>🤖 AI Insights</h2>
-      <button onClick={generateInsights} disabled={loading}>
-        {loading ? "Generating..." : "Generate AI Insights"}
-      </button>
+    <div
+      style={{
+        border: "1px solid #ddd",
+        borderRadius: 12,
+        padding: 24,
+        margin: "30px auto",
+        maxWidth: 700,
+        boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+        backgroundColor: "#fff",
+      }}
+    >
+      <h4 style={{ textAlign: "center", marginBottom: 16 }}>🤖 AI Insights</h4>
+      <div style={{ textAlign: "center", marginBottom: 20 }}>
+        <button
+          onClick={generateInsights}
+          disabled={loading}
+          style={{
+            padding: "10px 20px",
+            border: "none",
+            borderRadius: 8,
+            backgroundColor: loading ? "#aaa" : "#007bff",
+            color: "#fff",
+            cursor: loading ? "not-allowed" : "pointer",
+            fontSize: 14,
+            fontWeight: "bold",
+          }}
+        >
+          {loading ? "Generating..." : "Generate AI Insights"}
+        </button>
+      </div>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p style={{ color: "red", textAlign: "center" }}>{error}</p>}
 
-      {/* Repo Summary */}
       {summary && (
         <div style={{ marginTop: 20 }}>
           <h3>📘 Repository Summary</h3>
-          <p style={{ whiteSpace: "pre-wrap" }}>{summary}</p>
+          <p>{summary}</p>
         </div>
       )}
 
-      {/* Language Analysis */}
       {languages && (
         <div style={{ marginTop: 20 }}>
           <h3>🛠 Language Analysis</h3>
-          <p style={{ whiteSpace: "pre-wrap" }}>{languages}</p>
+          <p>{languages}</p>
         </div>
       )}
 
-      {/* Contribution Patterns */}
       {contrib && (
         <div style={{ marginTop: 20 }}>
           <h3>👥 Contribution Patterns</h3>
-          <p style={{ whiteSpace: "pre-wrap" }}>{contrib}</p>
+          <p>{contrib}</p>
         </div>
       )}
     </div>
   );
 }
-

@@ -1,50 +1,41 @@
-import {
-  PieChart,
-  Pie,
-  Cell,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
+import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#A28BFF", "#FF6699"];
 
 export default function LanguageChart({ languages }) {
   if (!languages || Object.keys(languages).length === 0) {
-    return <p>No language data available.</p>;
+    return <p style={{ textAlign: "center", marginTop: 20 }}>No language data available.</p>;
   }
 
   const total = Object.values(languages).reduce((a, b) => a + b, 0);
 
-  const data = Object.entries(languages).map(([name, value]) => ({
+  const data = Object.entries(languages).map(([name, value], index) => ({
     name,
     value,
     percent: ((value / total) * 100).toFixed(1),
+    color: COLORS[index % COLORS.length], // ✅ tie color to data
   }));
 
-  // ✅ Custom Legend with two aligned columns
   const renderLegend = () => (
     <div
       style={{
         display: "grid",
         gridTemplateColumns: "1fr 1fr",
         gap: "8px 20px",
-        marginTop: "20px",
+        marginTop: 16,
         textAlign: "left",
-        maxWidth: "600px",
+        maxWidth: 500,
         marginLeft: "auto",
         marginRight: "auto",
       }}
     >
       {data.map((entry, index) => (
-        <div
-          key={`legend-${index}`}
-          style={{ display: "flex", alignItems: "center" }}
-        >
+        <div key={index} style={{ display: "flex", alignItems: "center" }}>
           <div
             style={{
               width: 14,
               height: 14,
-              backgroundColor: COLORS[index % COLORS.length],
+              backgroundColor: entry.color, // ✅ correct color
               marginRight: 8,
               borderRadius: 3,
               flexShrink: 0,
@@ -58,32 +49,41 @@ export default function LanguageChart({ languages }) {
   );
 
   return (
-    <div style={{ width: "100%", height: 500 }}>
-      <h3 style={{ textAlign: "center", marginBottom: 20 }}>
-        Language Distribution
-      </h3>
-      <ResponsiveContainer width="100%" height="70%">
-        <PieChart>
-          <Pie
-            data={data}
-            cx="50%"
-            cy="50%"
-            outerRadius={150}
-            dataKey="value"
-            label={false}   // ✅ removed labels
-          >
-            {data.map((_, i) => (
-              <Cell key={i} fill={COLORS[i % COLORS.length]} />
-            ))}
-          </Pie>
-          <Tooltip />
-        </PieChart>
-      </ResponsiveContainer>
+    <div
+      style={{
+        border: "1px solid #ddd",
+        borderRadius: 12,
+        padding: 24,
+        boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+        backgroundColor: "#fff",
+        marginBottom: 40,
+        height: 500,
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      <h3 style={{ textAlign: "center", marginBottom: 16 }}>Language Distribution</h3>
+      <div style={{ flex: 1 }}>
+        <ResponsiveContainer width="100%" height="100%">
+          <PieChart>
+            <Pie
+              data={data}
+              cx="50%"
+              cy="50%"
+              outerRadius="70%" // ✅ responsive size inside container
+              dataKey="value"
+              label={false}
+            >
+              {data.map((entry, i) => (
+                <Cell key={i} fill={entry.color} /> // ✅ use data color
+              ))}
+            </Pie>
+            <Tooltip />
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
 
-      {/* ✅ Custom aligned legend below */}
       {renderLegend()}
     </div>
   );
 }
-
-
