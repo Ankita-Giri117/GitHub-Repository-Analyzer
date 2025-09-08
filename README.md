@@ -9,7 +9,8 @@
 📈 **Commit Activity Graph**: Weekly commit activity over the last year  \🤖 **AI-Generated Insights**:
   - Repository summary  
   - Language analysis  
-  - Contribution patterns  \📱 **PWA**: Installable & offline-capable
+  - Contribution patterns
+📱 **PWA**: Installable & offline-capable
 
 **Tech Stack**
 
