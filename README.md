@@ -29,7 +29,7 @@
 <img width="1920" height="1020" alt="glimpse3" src="https://github.com/user-attachments/assets/a4ba497e-466b-439e-bf54-7e99022b37da" /> <br><br>
 <img width="1920" height="1020" alt="glimpse4" src="https://github.com/user-attachments/assets/18e6f739-cf40-47db-9cbc-ac2aab26de4d" /> <br><br>
 
-STEPS TO RUN THE PWA LOCALLY:  (Run the commands on Git Bash or VS Code)\
+STEPS TO RUN THE PWA LOCALLY:  (Run the commands on Git Bash or VS Code)
 1. **Clone the repo**
   
    git clone https://github.com/Ankita-Giri117/GitHub-Repository-Analyzer.git  \
@@ -51,8 +51,8 @@ STEPS TO RUN THE PWA LOCALLY:  (Run the commands on Git Bash or VS Code)\
  -Give it a name (e.g., "Analyzer App") and select scopes:
    * repo (to read repo data)
    * read:user\
- -Generate and copy the token.\
- v-Paste it into .env as VITE_GITHUB_TOKEN.
+-Generate and copy the token.\
+-Paste it into .env as VITE_GITHUB_TOKEN.
 
 2. Generative AI API Key\
  -Go to Google AI Studio.\
