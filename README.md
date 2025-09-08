@@ -4,8 +4,7 @@
 
 **Features**
 
-📊 **Core Statistics**: Stars ⭐, forks 🍴, issues 🐛, license 📄 , 🔗 Repo Link, 👤 Owner 
-
+📊 **Core Statistics**: Stars ⭐, forks 🍴, issues 🐛, license 📄 , 🔗 Repo Link, 👤 Owner <br>
 🧩 **Language Composition Chart**: Interactive pie chart of repo languages  
 📈 **Commit Activity Graph**: Weekly commit activity over the last year  
 🤖 **AI-Generated Insights**:
@@ -33,7 +32,7 @@
 STEPS TO RUN THE PWA LOCALLY:  (Run the commands on Git Bash or VS Code)
 1. **Clone the repo**
   
-   git clone https://github.com/Ankita-Giri117/GitHub-Repository-Analyzer.git
+   git clone https://github.com/Ankita-Giri117/GitHub-Repository-Analyzer.git <br>
    cd GitHub-Repository-Analyzer
 
 2. **Install dependencies**
@@ -41,8 +40,8 @@ STEPS TO RUN THE PWA LOCALLY:  (Run the commands on Git Bash or VS Code)
    npm install
    
 3. **Run locally**
-   Create a .env file and add the following:
-   VITE_GITHUB_TOKEN=your_github_token
+   Create a .env file and add the following:<br>
+   VITE_GITHUB_TOKEN=your_github_token<br>
    VITE_GEMINI_API_KEY=your_gemini_api_key
    
 🔑 *How to get these keys*
@@ -62,12 +61,12 @@ STEPS TO RUN THE PWA LOCALLY:  (Run the commands on Git Bash or VS Code)
  -Copy the key and paste into .env as VITE_API_KEY.
 
 4. **Run locally**
-   npm run dev
+   npm run dev <br>
 
    Then open the link that looks like http://localhost:5173
    
 6. **Build for production**
-   npm run build
+   npm run build <br>
    npm run preview
 
 **PWA Features**
@@ -75,6 +74,6 @@ STEPS TO RUN THE PWA LOCALLY:  (Run the commands on Git Bash or VS Code)
 -Works offline (service workers enabled)
 -Responsive layout
 
-Author:
-Made with ❤️ by Ankita Giri
+Author: <br>
+Made with ❤️ by Ankita Giri <br>
 08/09/25
