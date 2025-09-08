@@ -51,6 +51,7 @@ STEPS TO RUN THE PWA LOCALLY:  (Run the commands on Git Bash or VS Code)
  -Give it a name (e.g., "Analyzer App") and select scopes:
    * repo (to read repo data)
    * read:user\
+     
 -Generate and copy the token.\
 -Paste it into .env as VITE_GITHUB_TOKEN.
 
@@ -72,7 +73,7 @@ STEPS TO RUN THE PWA LOCALLY:  (Run the commands on Git Bash or VS Code)
 **PWA Features**\
 -Installable on desktop & mobile\
 -Works offline (service workers enabled)\
--Responsive layout\
+-Responsive layout
 
 Author: \
 Made with ❤️ by Ankita Giri  \
