@@ -4,7 +4,7 @@
 
 **Features**
 
-📊 **Core Statistics**: Stars ⭐, forks 🍴, issues 🐛, license 📄 , 🔗 Repo Link, 👤 Owner <br>
+📊 **Core Statistics**: Stars ⭐, forks 🍴, issues 🐛, license 📄 , 🔗 Repo Link, 👤 Owner \
 🧩 **Language Composition Chart**: Interactive pie chart of repo languages  
 📈 **Commit Activity Graph**: Weekly commit activity over the last year  
 🤖 **AI-Generated Insights**:
@@ -24,15 +24,15 @@
  Live URL: https://git-hub-repository-analyzer-liart.vercel.app/ 
 
  Screenshots: 
-<img width="1920" height="1020" alt="glimpse1" src="https://github.com/user-attachments/assets/aa7a07cf-78ea-4ad5-a387-08c25bf41293" />
-<img width="1920" height="1020" alt="glimpse2" src="https://github.com/user-attachments/assets/7731b86f-d00c-472e-9e31-191ab17a9363" />
-<img width="1920" height="1020" alt="glimpse3" src="https://github.com/user-attachments/assets/a4ba497e-466b-439e-bf54-7e99022b37da" />
-<img width="1920" height="1020" alt="glimpse4" src="https://github.com/user-attachments/assets/18e6f739-cf40-47db-9cbc-ac2aab26de4d" />
+<img width="1920" height="1020" alt="glimpse1" src="https://github.com/user-attachments/assets/aa7a07cf-78ea-4ad5-a387-08c25bf41293" />  <br>
+<img width="1920" height="1020" alt="glimpse2" src="https://github.com/user-attachments/assets/7731b86f-d00c-472e-9e31-191ab17a9363" /> <br>
+<img width="1920" height="1020" alt="glimpse3" src="https://github.com/user-attachments/assets/a4ba497e-466b-439e-bf54-7e99022b37da" /> <br>
+<img width="1920" height="1020" alt="glimpse4" src="https://github.com/user-attachments/assets/18e6f739-cf40-47db-9cbc-ac2aab26de4d" /> <br>
 
 STEPS TO RUN THE PWA LOCALLY:  (Run the commands on Git Bash or VS Code)
 1. **Clone the repo**
   
-   git clone https://github.com/Ankita-Giri117/GitHub-Repository-Analyzer.git <br>
+   git clone https://github.com/Ankita-Giri117/GitHub-Repository-Analyzer.git  \
    cd GitHub-Repository-Analyzer
 
 2. **Install dependencies**
@@ -40,8 +40,8 @@ STEPS TO RUN THE PWA LOCALLY:  (Run the commands on Git Bash or VS Code)
    npm install
    
 3. **Run locally**
-   Create a .env file and add the following:<br>
-   VITE_GITHUB_TOKEN=your_github_token<br>
+   Create a .env file and add the following: \
+   VITE_GITHUB_TOKEN=your_github_token \
    VITE_GEMINI_API_KEY=your_gemini_api_key
    
 🔑 *How to get these keys*
@@ -61,12 +61,12 @@ STEPS TO RUN THE PWA LOCALLY:  (Run the commands on Git Bash or VS Code)
  -Copy the key and paste into .env as VITE_API_KEY.
 
 4. **Run locally**
-   npm run dev <br>
+   npm run dev  \
 
    Then open the link that looks like http://localhost:5173
    
 6. **Build for production**
-   npm run build <br>
+   npm run build  \
    npm run preview
 
 **PWA Features**
@@ -75,5 +75,5 @@ STEPS TO RUN THE PWA LOCALLY:  (Run the commands on Git Bash or VS Code)
 -Responsive layout
 
 Author: <br>
-Made with ❤️ by Ankita Giri <br>
+Made with ❤️ by Ankita Giri  \
 08/09/25
