@@ -6,10 +6,11 @@
 
 📊 **Core Statistics**: Stars ⭐, forks 🍴, issues 🐛, license 📄 , 🔗 Repo Link, 👤 Owner \
 🧩 **Language Composition Chart**: Interactive pie chart of repo languages  
-📈 **Commit Activity Graph**: Weekly commit activity over the last year  \🤖 **AI-Generated Insights**:
+📈 **Commit Activity Graph**: Weekly commit activity over the last year  <br>
+🤖 **AI-Generated Insights**:
   - Repository summary  
   - Language analysis  
-  - Contribution patterns
+  - Contribution patterns<br>
 📱 **PWA**: Installable & offline-capable
 
 **Tech Stack**
