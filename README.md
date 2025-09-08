@@ -9,8 +9,7 @@
 📈 **Commit Activity Graph**: Weekly commit activity over the last year  \🤖 **AI-Generated Insights**:
   - Repository summary  
   - Language analysis  
-  - Contribution patterns  
-📱 **PWA**: Installable & offline-capable
+  - Contribution patterns  \📱 **PWA**: Installable & offline-capable
 
 **Tech Stack**
 
@@ -43,24 +42,24 @@ STEPS TO RUN THE PWA LOCALLY:  (Run the commands on Git Bash or VS Code)\
    VITE_GITHUB_TOKEN=your_github_token \
    VITE_GEMINI_API_KEY=your_gemini_api_key
    
-🔑 *How to get these keys*\
+🔑 *How to get these keys*
 1. GitHub Token \
  -Open your GitHub account, Go to GitHub Settings → Developer Settings → Personal Access Tokens.\
  -Click "Generate new token (classic)".\
- -Give it a name (e.g., "Analyzer App") and select scopes:\
+ -Give it a name (e.g., "Analyzer App") and select scopes:
    * repo (to read repo data)
    * read:user\
-  -Generate and copy the token.\
-  -Paste it into .env as VITE_GITHUB_TOKEN.
+ -Generate and copy the token.\
+ v-Paste it into .env as VITE_GITHUB_TOKEN.
 
 2. Generative AI API Key\
  -Go to Google AI Studio.\
  -Sign in with your Google account.\
  -Create a new API key from Get API Key.\
- -Copy the key and paste into .env as VITE_API_KEY.\
+ -Copy the key and paste into .env as VITE_API_KEY.
 
 4. **Run locally**\
-   npm run dev  \
+   npm run dev  
 
    Then open the link that looks like http://localhost:5173
    
