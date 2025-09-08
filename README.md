@@ -50,10 +50,10 @@ STEPS TO RUN THE PWA LOCALLY:  (Run the commands on Git Bash or VS Code)
  -Click "Generate new token (classic)".\
  -Give it a name (e.g., "Analyzer App") and select scopes:
    * repo (to read repo data)
-   * read:user\
+   * read:user
    
- -Generate and copy the token.\
- -Paste it into .env as VITE_GITHUB_TOKEN.
+  -Generate and copy the token.\
+  -Paste it into .env as VITE_GITHUB_TOKEN.
 
 2. Generative AI API Key\
  -Go to Google AI Studio.\
